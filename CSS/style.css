@@ -3,6 +3,7 @@
     --secondary: #a1a2a6;
     --text-color: #fff;
     --text-tertiary: #5d5d5d;
+    --text-secondary: #000;
 }
 
 * {
@@ -12,9 +13,6 @@
     box-sizing: border-box; /* para os elementos não passarem da area util de uma div */
 }
 
-body {
-    padding-bottom: 500px;
-}
 /* Event form*/
 #event-descripition {
     background: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url("../IMG/hrz-5.jpg");
@@ -62,7 +60,7 @@ body {
 
 #subscripition-form p {
     font-size: 1.5em;
-    color: var(--text-tertiary);
+    color: var( --text-secondary);
     margin-bottom: .5em;
 
 }
@@ -109,7 +107,7 @@ body {
     background-color: var(--secondary);
     text-align: center;
     padding: 2em;
-    font-weight: 500; /* reduzindo a intensidade do negrito*/
+    font-weight: bold; /* reduzindo a intensidade do negrito*/
 }
 
 .benefits {
@@ -223,7 +221,7 @@ body {
 }
 
 #detail-1 h3 {
-    font-size: 3em; /* formatando o titulo principal da seção*/
+    font-size: 2.5em; /* formatando o titulo principal da seção*/
     font-weight: 700;
 }
 
@@ -232,3 +230,191 @@ body {
     padding-left: 2em;
 }
 
+.detail-description ul {
+    list-style-position: inside; /* alinhaando os pontinhos da lista com o titulo da lista*/
+}
+
+.detail-description ul li {
+    margin-bottom: 0.3em; /* afastando um li do outro */
+}
+
+.detail-description ul li:last-child {
+    font-weight: 700; /* acessando o ultimo item da li (lista)*/
+}
+
+/* sessãp se inscreva cta*/
+#cta {
+    height: 300px;
+    background: linear-gradient(rgba(0,0,0, 0.7), rgba(0,0,0, 0.7)), url("../IMG/hrz-1.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+#cta h3 {
+    margin-bottom: 1.2em;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+#cta .btn {
+    width: 30%;
+    margin: 0 auto; /* margin 0 auto centraliza na orizontal*/
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+/* footer*/
+#footer {
+    text-align: center;
+    color: var(--secondary);
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#footer h3 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+#footer p:nth-child(2) {
+    margin-bottom: 1em; /* trabalhando com o primeiro p, ou seja, o segundo filho da div que seria a frase "A evolução da decoração de interiores"*/
+    font-size: 1.2em;
+}
+
+#footer span {
+    font-weight: bold;
+}
+
+#btn-topo {
+    text-decoration: none;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 8%;
+    padding: 7px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    box-shadow: 3px 3px 8px #333;
+}
+
+/* RESPONSIVIDADE*/
+
+/* mobile */
+@media (max-width: 450px) {
+
+    .btn {
+        opacity: 1;
+    }
+    /* event form*/
+    #event-descripition {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #disclaimer {
+        padding: 2em;
+    }
+
+    #disclaimer h2 {
+        margin-bottom: .5em;
+    }
+
+    #subscripition-form {
+        max-width: 70%;
+        margin-bottom: 2em;
+    }
+
+    /* sessão de beneficios*/
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        padding: 2em;
+    }
+
+    .benefit {
+        max-width: 100%;
+        margin-bottom: 2em;
+    }
+
+    /* event location*/
+    #location {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 2em 0; /* zero nas laterais*/
+    }
+
+    #address {
+        order: 2; /* mudando a ordem dos elementos*/
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    #address i {
+        margin: .3em 0;
+    }
+
+    #about-location {
+        order: 1;
+        max-width: 100%;
+    }
+
+    #about-location h3 {
+        margin-bottom: 0;
+    }
+
+    #about-location p {
+        display: none; /* sumindo com o paragrafo*/
+    }
+
+    /* event details container*/
+    .detail {
+        flex-direction: column;
+        margin-bottom: 0.5em;
+        gap: 0;
+    }
+
+    .detail img {
+        width: 100%;
+        margin: 2em 0;
+    }
+
+    #detail-1 img {
+        display: none; /* sumindo com a primeira img da sessão*/
+    }
+
+    .detail-description {
+        padding: 0;
+    }
+
+    #detail-3 img {
+        order: 2;
+    }
+
+    #detail-3 .detail-description {
+        order: 1;
+    } 
+
+    /* sessãp se inscreva cta*/
+    #cta {
+        text-align: center;
+    }
+
+    #cta .btn {
+        width: 80%;
+    }
+    
+    #footer p {
+        font-size: 0.9em;
+        margin-bottom: 0.8em;
+    }
+
+}
